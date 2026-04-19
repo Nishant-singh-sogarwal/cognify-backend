@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Cognify Dashboard</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#0f172a;
+color:white;
+text-align:center;
+padding:40px;
+}
+
+h1{
+color:#22c55e;
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+margin:20px;
+border-radius:10px;
+display:inline-block;
+width:200px;
+}
+
+.number{
+font-size:30px;
+font-weight:bold;
+margin-top:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Cognify Focus Dashboard</h1>
+
+<div class="card">
+<h3>Study Time</h3>
+<div class="number" id="study">0</div>
+</div>
+
+<div class="card">
+<h3>Focus Streak</h3>
+<div class="number" id="streak">0</div>
+</div>
+
+<div class="card">
+<h3>Distractions</h3>
+<div class="number" id="distraction">0</div>
+</div>
+
+<div class="card">
+<h3>Productivity Score</h3>
+<div class="number" id="score">0%</div>
+</div>
+
+<script>
+
+let study = Math.floor(Math.random()*120)
+let streak = Math.floor(Math.random()*40)
+let distraction = Math.floor(Math.random()*15)
+
+let score = Math.floor((study/(study+distraction))*100)
+
+document.getElementById("study").innerText = study + " min"
+document.getElementById("streak").innerText = streak
+document.getElementById("distraction").innerText = distraction
+document.getElementById("score").innerText = score + "%"
+
+</script>
+
+</body>
+</html>

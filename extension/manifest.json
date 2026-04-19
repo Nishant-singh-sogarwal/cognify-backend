@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Cognify - Focus Monitor",
+  "version": "1.0",
+  "description": "Smart focus and distraction monitoring system",
+
+  "permissions": [
+    "tabs",
+    "storage",
+    "activeTab",
+    "notifications"
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "action": {
+    "default_popup": "popup.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
